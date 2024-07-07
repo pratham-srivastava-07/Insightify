@@ -21,4 +21,18 @@ const supabase = createServerClient(
 
 export async function BlogForm(data: FormSchema) {
     // To be continued
+    const {["content"]:excludedKey, ...blog} =  data
+
+   const response = await supabase.from("blog").insert(blog).select("id").single()
+
+    if(response.error) {
+        return JSON.stringify(response)
+    }
+    else {
+        const result = await supabase.from("blog").insert({
+            blog_id: response.data.id!,
+            content: data.content!
+        })
+        return JSON.stringify(result)
+    }
 }
