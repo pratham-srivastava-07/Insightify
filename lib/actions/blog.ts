@@ -36,3 +36,7 @@ export async function BlogForm(data: FormSchema) {
         return JSON.stringify(result)
     }
 }
+
+export async function readBlogs() {
+    return supabase.from("blog").select("*").order("created_at", {ascending: true})
+}
