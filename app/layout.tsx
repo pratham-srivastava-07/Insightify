@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 // import { SessionProvider } from "next-auth/react";
 import Sessionprovider from "@/providers/SessionProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { Providers } from "@/providers/AuthProvider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,19 +25,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
-           attribute="class"
-           defaultTheme="dark"
-           enableSystem
-           disableTransitionOnChange
-        >
-        <main className="max-w-7xl mx-auto p-10 space-y-10">
-        <Navbar/>
-        {children}
-        </main>
-        <Toaster/>
-        </ThemeProvider>
-       <Sessionprovider/>
+        <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+          <main className="max-w-7xl mx-auto p-10 space-y-10">
+          <Navbar/>
+          {children}
+          </main>
+          <Toaster/>
+          </ThemeProvider>
+        <Sessionprovider/>
+        </Providers>
         </body>
     </html>
   );

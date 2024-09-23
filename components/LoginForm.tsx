@@ -5,6 +5,7 @@ import { Button } from './ui/button'
 import { SiGithub } from 'react-icons/si'
 import { createBrowserClient } from '@supabase/ssr'
 import { usePathname } from 'next/navigation'
+import { signIn } from 'next-auth/react'
 
 export default function() {
   const supabase = createBrowserClient(
@@ -24,7 +25,7 @@ export default function() {
   }
 
   return (
-    <div>
+    <div className='flex items-cemter space-x-4'>
       <Button variant="outline"
        className='flex items-center gap-2'
        onClick={handleAuth}
@@ -32,6 +33,13 @@ export default function() {
         <SiGithub/>
         Login
         
+        </Button>
+
+        <Button variant={"outline"}
+        className='flex items-center gap-2'
+        onClick={() => signIn()}
+        >
+        Sign up with other  options
         </Button>
     </div>
   )
