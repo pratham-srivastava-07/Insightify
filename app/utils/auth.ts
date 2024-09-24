@@ -2,7 +2,7 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import {prismaClient} from "../../lib/db"
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 export const authOptions = {
     providers: [
       CredentialsProvider({
