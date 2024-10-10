@@ -6,7 +6,7 @@ import Markdown from "react-markdown"
 import "highlight.js/styles/atom-one-dark.min.css"
 import {PiTerminal} from "react-icons/pi"
 import CopyButton from './CopyButton'
-import { icons } from '../lib/icons'
+import { icons } from '../../lib/icons'
 
 export default function MarkDownPreview({content, className}: {content: string, className?:string}) {
 

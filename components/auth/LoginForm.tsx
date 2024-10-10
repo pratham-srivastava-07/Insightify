@@ -1,12 +1,13 @@
 "use client"
 
 import React from 'react'
-import { Button } from './ui/button'
 import { SiGithub } from 'react-icons/si'
 import { createBrowserClient } from '@supabase/ssr'
 import { usePathname } from 'next/navigation'
 import { signIn, useSession } from 'next-auth/react'
-import AuthenticProfile from './AuthenticProfile'
+import { Button } from '../ui/button'
+import UserAuth from './UserAuth'
+
 
 export default function() {
   const supabase = createBrowserClient(
@@ -45,7 +46,7 @@ export default function() {
         >
         Sign up with other  options
         </Button>
-    </div>: <AuthenticProfile />}
+    </div>: <UserAuth />}
    </>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from './ui/button'
 import {  PlusIcon } from 'lucide-react'
 import Link from "next/link"
 import BlogTable from '@/app/dashboard/components/BlogTable'
+import { Button } from '@/components/ui/button'
 
 export default function Dashboard() {
   return (

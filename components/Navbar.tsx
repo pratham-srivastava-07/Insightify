@@ -2,10 +2,11 @@
 
 import React from 'react'
 import Link from 'next/link'
-import LoginForm from './LoginForm';
+// import LoginForm from './LoginForm';
 import { useUser } from '@/lib/store/user';
 import Profile from './Profile';
 import { useSession } from 'next-auth/react';
+import LoginForm from './auth/LoginForm';
 
 export default function Navbar() {
   const user = useUser((state)=> state.user)

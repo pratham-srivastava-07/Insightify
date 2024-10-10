@@ -23,10 +23,12 @@ import { EyeOpenIcon, Pencil1Icon } from "@radix-ui/react-icons"
 import { Switch } from "@/components/ui/switch"
 import { RocketIcon, StarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Textarea } from "./ui/textarea"
-import MarkDown from "./MarkDown"
-import MarkDownPreview from "./MarkDown"
+// import { Textarea } from "./ui/textarea"
+// import MarkDown from "./MarkDown"
+// import MarkDownPreview from "./MarkDown"
 import { FormSchema } from "@/app/dashboard/schema"
+import MarkDownPreview from "./MarkDown"
+import { Textarea } from "../ui/textarea"
 
 
 export default function CreateBlog(

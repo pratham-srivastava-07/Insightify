@@ -1,6 +1,7 @@
 "use server"
 
-import { FormSchema } from "@/components/CreateBlog"
+import { FormSchema } from "@/components/content/CreateBlog"
+// import { FormSchema } from "@/components/CreateBlog"
 import { createServerClient } from "@supabase/ssr"
 import {cookies} from 'next/headers'
 
