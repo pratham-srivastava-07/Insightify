@@ -4,9 +4,10 @@ import React from 'react'
 import { SiGithub } from 'react-icons/si'
 import { createBrowserClient } from '@supabase/ssr'
 import { usePathname } from 'next/navigation'
-import { signIn, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import { Button } from '../ui/button'
 import UserAuth from './UserAuth'
+import  Link  from 'next/link'
 
 
 export default function() {
@@ -36,16 +37,18 @@ export default function() {
        onClick={handleAuth}
       >
         <SiGithub/>
-        Login
+        Signin
         
         </Button>
 
-        <Button variant={"outline"}
-        className='flex items-center gap-2'
-        onClick={() => signIn()}
-        >
-        Sign up with other  options
-        </Button>
+       <Link href='/api/auth/signin'>
+          <Button variant={"outline"}
+            className='flex items-center gap-2'
+            
+            >
+            Other  options
+          </Button>
+       </Link>
     </div>: <UserAuth />}
    </>
   )

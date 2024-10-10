@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import { Providers } from "@/providers/Providers";
+
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/Navbar";
-// import { SessionProvider } from "next-auth/react";
+
+
 import Sessionprovider from "@/providers/SessionProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/providers/AuthProvider";
+import Navbar from "@/components/layouts/Navbar";
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter"  });
@@ -24,10 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <body
-  className={`antialiased bg-[linear-gradient(135deg,_#1e1e1e,_#0a0a0a,_#141414)] bg-[length:150%_150%] animate-[galaxyPulse_8s_ease-in-out_infinite]`}
+    <body
+  className={`${inter.variable} antialiased bg-[linear-gradient(145deg,_#000000,_#1b1b1b,_#3d3d3d,_#101010)] bg-[length:200%_200%] animate-[neonGlow_5s_ease-in-out_infinite]`}
   style={{ color: 'white' }}
 >
+
 
         <Providers>
           <ThemeProvider
@@ -37,7 +39,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
           <main className="max-w-7xl mx-auto p-10 space-y-10">
-          <Navbar/>
+          <Navbar />
           {children}
           </main>
           <Toaster/>
