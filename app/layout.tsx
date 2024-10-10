@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/providers/AuthProvider";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter"  });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+     <body
+  className={`antialiased bg-[linear-gradient(135deg,_#1e1e1e,_#0a0a0a,_#141414)] bg-[length:150%_150%] animate-[galaxyPulse_8s_ease-in-out_infinite]`}
+  style={{ color: 'white' }}
+>
+
         <Providers>
           <ThemeProvider
             attribute="class"
