@@ -1,11 +1,12 @@
-import { getServerSession } from "next-auth"
+"use client"
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import Image from "next/image"
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { DashboardIcon, LockOpen1Icon } from "@radix-ui/react-icons";
-export default async function UserAuth() {
-   const session = await getServerSession()
+import { useSession } from "next-auth/react";
+export default function UserAuth() {
+   const {data: session} =  useSession()
     return <div>
         <Popover>
             <PopoverTrigger>
@@ -19,7 +20,7 @@ export default async function UserAuth() {
             <PopoverContent className="p-2 space-y-3 divide-y">
                 <div className="text-sm px-4">
                     <p>{session?.user?.name}</p>
-                    <p>{session?.user?.email}</p>
+                    <p className="text-gray-400">{session?.user?.email}</p>
                 </div>
                 <Link href={"/dashboard"}>
                     <Button variant={"ghost"} className="w-full flex items-center justify-between">
