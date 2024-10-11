@@ -1,4 +1,4 @@
-import { Contact, HomeIcon } from "lucide-react"
+import { Contact, Home, HomeIcon } from "lucide-react"
 import { SiAboutdotme, SiWritedotas } from "react-icons/si"
 
 export type MenuProps = {
@@ -13,7 +13,7 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
     {
         id: 0,
         label: "Home",
-        icon: <HomeIcon />,
+        icon: <Home />,
         path: "/",
         section: true
     },

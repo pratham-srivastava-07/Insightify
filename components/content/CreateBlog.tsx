@@ -26,7 +26,7 @@ import { cn } from "@/lib/utils"
 // import { Textarea } from "./ui/textarea"
 // import MarkDown from "./MarkDown"
 // import MarkDownPreview from "./MarkDown"
-import { FormSchema } from "@/app/dashboard/schema"
+import { FormSchema } from "@/app/(blogs)/blog/schema"
 import MarkDownPreview from "./MarkDown"
 import { Textarea } from "../ui/textarea"
 
