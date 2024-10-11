@@ -1,4 +1,4 @@
-import Signin from "@/pages/Signin"
+import Signin from "@/pages/signin/Signin"
 
 export default function() {
     return(
