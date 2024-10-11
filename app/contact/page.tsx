@@ -1,4 +1,4 @@
-import Contact from "@/pages/Contact";
+import Contact from "@/pages/contact";
 
 export default function() {
     return (

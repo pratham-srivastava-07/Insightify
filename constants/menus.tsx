@@ -21,7 +21,7 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
         id: 1,
         label: "Blogs",
         icon: <SiWritedotas />,
-        path: "/blogs",
+        path: "/blog",
         section: true
     },
     {

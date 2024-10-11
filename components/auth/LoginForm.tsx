@@ -37,7 +37,7 @@ export default function() {
        onClick={handleAuth}
       >
         <SiGithub/>
-        Signin
+        Github
         
         </Button>
 

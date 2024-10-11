@@ -7,9 +7,10 @@ import {
     PopoverTrigger,
   } from "@/components/ui/popover"
 import  Link  from 'next/link'
-import { Button } from './ui/button'
+
 import { DashboardIcon, LockOpen1Icon } from '@radix-ui/react-icons'
 import { createBrowserClient } from '@supabase/ssr'
+import { Button } from '../ui/button'
   
 
 export default function Profile() {

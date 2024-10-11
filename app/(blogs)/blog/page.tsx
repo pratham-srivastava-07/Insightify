@@ -1,4 +1,5 @@
-import Blogs from "@/pages/Blogs";
+import Blogs from "@/pages/blogs";
+
 
 export default function() {
     return <div>

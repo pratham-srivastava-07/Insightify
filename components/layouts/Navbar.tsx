@@ -6,12 +6,13 @@ import Link from 'next/link'
 import { useUser } from '@/lib/store/user';
 
 import { useSession } from 'next-auth/react';
-import Profile from '../Profile';
+
 import LoginForm from '../auth/LoginForm';
 import Menu from './Menu';
 import GlassSheet from '../global/glass-sheet';
 import { Button } from '../ui/button';
 import { MenuIcon } from 'lucide-react';
+import Profile from '../auth/Profile';
 
 
 export default function Navbar() {
