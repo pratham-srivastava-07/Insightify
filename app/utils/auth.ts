@@ -1,6 +1,8 @@
 import { prismaClient } from "../../lib/db";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
+import { pages } from "next/dist/build/templates/app-page";
+import { signIn } from "next-auth/react";
 
 export const authOptions = {
   providers: [
@@ -55,4 +57,7 @@ export const authOptions = {
       return session;
     },
   },
+  pages: {
+    signIn: "/signin"
+  }
 };

@@ -1,9 +1,10 @@
-import Signin from "@/pages/signin/Signin"
+import SignInPage from "@/pages/signin/Signin"
+
 
 export default function() {
     return(
         <div>
-            <Signin/>
+            <SignInPage />
         </div>
     )
 }
