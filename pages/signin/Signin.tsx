@@ -1,8 +1,16 @@
-
+"use client"
 import SignInForm from "@/components/forms/signin"
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { signIn } from "next-auth/react"
+import { BsGoogle } from "react-icons/bs"
+import { SiGoogleauthenticator } from "react-icons/si"
 
 const SignInPage = () => {
+
+  const handleAuthWithGoogle = async () => {
+        await signIn("google");
+  }
   return (
     <>
       <h5 className="font-bold text-base text-themeTextWhite">Login</h5>
@@ -17,6 +25,15 @@ const SignInPage = () => {
         <Separator orientation="horizontal" className="bg-themeGray" />
       </div>
       {/* <GoogleAuthButton method="signin" /> */}
+      <div className="flex justify-center items-center">
+          <Button 
+          className="flex items-center justify-center gap-3 w-full"
+          onClick={handleAuthWithGoogle}
+          >
+              Google
+              <BsGoogle />
+          </Button>
+      </div>
     </>
   )
 }

@@ -1,9 +1,10 @@
-import SignUp from "@/pages/signup/Signup";
+import SignUpPage from "@/pages/signup/Signup";
+
 
 export default function() {
     return (
         <div>
-            <SignUp />
+            <SignUpPage />
         </div>
     )
 }
