@@ -7,7 +7,7 @@ const SignInPage = () => {
     <>
       <h5 className="font-bold text-base text-themeTextWhite">Login</h5>
       <p className="text-themeTextGray leading-tight">
-        Develop into the best version of yourself by making new friends, creating your own, watching classes, and connecting with people all around the world.
+          Develop into the best version of yourself by making new friends, creating your own, watching classes, and connecting with people all around the world.
       </p>
       <SignInForm />
       <div className="my-10 w-full relative">
