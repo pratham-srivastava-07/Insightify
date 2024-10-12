@@ -1,8 +1,7 @@
 import { prismaClient } from "../../lib/db";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { pages } from "next/dist/build/templates/app-page";
-import { signIn } from "next-auth/react";
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
   providers: [
@@ -47,6 +46,10 @@ export const authOptions = {
         }
       },
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID || "",
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || ""
+    })
   ],
   secret: process.env.NEXTAUTH_SECRET || "secret",
   callbacks: {
