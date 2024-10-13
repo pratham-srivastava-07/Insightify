@@ -14,7 +14,7 @@ const DashboardSnippet = (props: Props) => {
           alt="snippet"
           sizes="100vw"
           fill
-          objectFit="contain"
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>

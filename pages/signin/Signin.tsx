@@ -9,7 +9,7 @@ import { SiGoogleauthenticator } from "react-icons/si"
 const SignInPage = () => {
 
   const handleAuthWithGoogle = async () => {
-        await signIn("google");
+        await signIn("google", {callbackUrl: '/dashboard'});
   }
   return (
     <>
