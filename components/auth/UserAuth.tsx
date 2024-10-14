@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { DashboardIcon, LockOpen1Icon } from "@radix-ui/react-icons";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 export default function UserAuth() {
    const {data: session} =  useSession()
     return <div>
@@ -29,7 +29,7 @@ export default function UserAuth() {
                     </Button>
                 </Link>
                 <Link href={"/api/auth/signout"}>
-                    <Button variant={"ghost"} className="w-full flex items-center justify-between">
+                    <Button variant={"ghost"} onClick={()=> signOut({callbackUrl: "/"})} className="w-full flex items-center justify-between">
                         Logout
                         <LockOpen1Icon />
                     </Button>

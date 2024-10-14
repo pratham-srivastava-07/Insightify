@@ -1,11 +1,13 @@
 import GradientText from "@/components/global/gradient-text"
 import { Button } from "@/components/ui/button"
 import { BadgePlus } from "lucide-react"
+import { getServerSession } from "next-auth"
 import Link from "next/link"
 
 type Props = {}
 
-const CallToAction = (props: Props) => {
+const CallToAction = async (props: Props) => {
+  const session = await getServerSession()
   return (
     <div className="flex flex-col items-start md:items-center gap-y-5 md:gap-y-0">
       <GradientText
@@ -28,7 +30,7 @@ const CallToAction = (props: Props) => {
         >
           Watch Demo
         </Button>
-        <Link href="/signin">
+        <Link href={`${session ? "/dashboard" : "/signin"}`}>
           <Button className="rounded-xl text-base flex gap-2 w-full">
             <BadgePlus /> Get Started
           </Button>

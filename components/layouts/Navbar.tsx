@@ -13,11 +13,13 @@ import GlassSheet from '../global/glass-sheet';
 import { Button } from '../ui/button';
 import { MenuIcon } from 'lucide-react';
 import Profile from '../auth/Profile';
+import { usePathname } from 'next/navigation';
 
 
 export default function Navbar() {
   const user = useUser((state)=> state.user)
   const {data: session} =  useSession()
+  const pathName = usePathname()
   return (
     <nav className='flex items-center justify-between'>
         <div className="group">

@@ -3,6 +3,7 @@ import SignInForm from "@/components/forms/signin"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { signIn } from "next-auth/react"
+import Link from "next/link"
 import { BsGoogle } from "react-icons/bs"
 import { SiGoogleauthenticator } from "react-icons/si"
 
@@ -27,12 +28,15 @@ const SignInPage = () => {
       {/* <GoogleAuthButton method="signin" /> */}
       <div className="flex justify-center items-center">
           <Button 
-          className="flex items-center justify-center gap-3 w-full"
+          className="flex items-center justify-center gap-3 w-full rounded-full"
           onClick={handleAuthWithGoogle}
           >
               Google
               <BsGoogle />
           </Button>
+      </div>
+      <div className="flex items-center justify-center">
+        <p className="pt-10 ">New to Insightify? <Link className="text-blue-500 hover:underline" href={"/signup"}>Sign up</Link></p>
       </div>
     </>
   )
