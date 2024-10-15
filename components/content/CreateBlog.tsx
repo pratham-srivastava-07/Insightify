@@ -179,7 +179,7 @@ export default function CreateBlog(
             <FormItem>
               <FormControl>
                 <div className={cn("p-2 w-full flex break-words gap-2", isPreview ? "divide-x-0": "divide-x h-70vh")}>
-                <Textarea placeholder="content" className={cn("border-none text-lg font-medium leading relaxed resize-none", isPreview ? "w-0 p-0": "w-full lg-1/2")} {...field} />
+                <Textarea placeholder="content" className={cn("border-none text-lg font-medium leading relaxed resize-none h-full", isPreview ? "w-0 p-0": "w-full lg-1/2")} {...field} />
                 <div className={cn("overflow-y-auto", isPreview? "w-full mx-auto lg:w-4/5": "w-1/2 lg:block hidden")}>
                  <MarkDownPreview content = {form.getValues().content} />
                 </div>

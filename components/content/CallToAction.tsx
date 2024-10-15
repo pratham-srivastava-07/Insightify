@@ -17,7 +17,7 @@ const CallToAction = async (props: Props) => {
         Bringing Communities <br className="md:hidden" /> Together
       </GradientText>
       <p className="text-sm md:text-center text-left text-muted-foreground">
-       Insightify lets you step into a vibrant network of creators, thinkers, and dreamers. 
+        Insightify lets you step into a vibrant network of creators, thinkers, and dreamers. 
         <br className="md:hidden" />
         Together, we empower each other to connect, <br className="hidden md:block" />  share, and cultivate a community
         <br className="md:hidden" />

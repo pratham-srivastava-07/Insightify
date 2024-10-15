@@ -35,7 +35,7 @@ function SignUpForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mt-10">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 mt-10">
         {GROUP_CONSTANTS.signUpForm.map((field) => (
           <FormField
             key={field.id}
@@ -47,6 +47,7 @@ function SignUpForm() {
                 <FormControl>
                   {field.type === "email" || field.type === "password" || field.type === "text" ? (
                     <Input
+                      className="rounded-full"
                       type={field.type}
                       placeholder={field.placeholder}
                       {...formField}
@@ -59,9 +60,11 @@ function SignUpForm() {
           />
         ))}
 
-        <Button type="submit" className="w-full rounded-full">
-          Sign Up
-        </Button>
+       <div className="pt-5">
+          <Button type="submit" className="w-full rounded-full">
+            Sign Up
+          </Button>
+       </div>
       </form>
     </Form>
   );

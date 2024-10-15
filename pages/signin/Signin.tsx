@@ -5,12 +5,15 @@ import { Separator } from "@/components/ui/separator"
 import { signIn } from "next-auth/react"
 import Link from "next/link"
 import { BsGoogle } from "react-icons/bs"
-import { SiGoogleauthenticator } from "react-icons/si"
+import { SiGithub, SiGoogleauthenticator } from "react-icons/si"
 
 const SignInPage = () => {
 
   const handleAuthWithGoogle = async () => {
         await signIn("google", {callbackUrl: '/dashboard'});
+  }
+  const handleAuthWithGithub = async () => {
+      await signIn("github", {callbackUrl: "/dashboard"})
   }
   return (
     <>
@@ -33,6 +36,15 @@ const SignInPage = () => {
           >
               Google
               <BsGoogle />
+          </Button>
+      </div>
+      <div className="flex justify-center items-center pt-5">
+          <Button 
+          className="flex items-center justify-center gap-3 w-full rounded-full"
+          onClick={handleAuthWithGithub}
+          >
+              Github
+              <SiGithub />
           </Button>
       </div>
       <div className="flex items-center justify-center">

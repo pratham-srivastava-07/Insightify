@@ -1,88 +1,24 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { withAuth } from "next-auth/middleware";
+import { NextResponse } from "next/server";
 
-export async function middleware(request: NextRequest) {
-  let response = NextResponse.next({
-    request: {
-      headers: request.headers,
+export default withAuth(
+    function middleware(req) {
+      const token = req.nextauth?.token
+      const path = req.nextUrl.pathname
+      if(token && (path.startsWith("/signin") || path.startsWith("/signup"))) {
+          return NextResponse.redirect(new URL("/", req.url))
+      }
     },
-  })
-
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
-      cookies: {
-        get(name: string) {
-          return request.cookies.get(name)?.value
+        callbacks: {
+            authorized: ({ token }) => !!token,
         },
-        set(name: string, value: string, options: CookieOptions) {
-          request.cookies.set({
-            name,
-            value,
-            ...options,
-          })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          response.cookies.set({
-            name,
-            value,
-            ...options,
-          })
-        },
-        remove(name: string, options: CookieOptions) {
-          request.cookies.set({
-            name,
-            value: '',
-            ...options,
-          })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          response.cookies.set({
-            name,
-            value: '',
-            ...options,
-          })
-        },
-      },
-    }
-  )
- 
-  
+    },
+);
 
- const { data } = await supabase.auth.getUser()
-
- if(request.nextUrl.pathname.startsWith('/blog/create') && data) {
-    return NextResponse.next();
-}
- if(request.nextUrl.pathname.startsWith('/blog') && !data) {
-    return NextResponse.redirect(new URL('/', request.url))
-  }
-
- console.log(data);
-
-
- 
-
-  return response
-
-}
-
-// export const config = {
-//   matcher: [
-//     /*
-//      * Match all request paths except for the ones starting with:
-//      * - _next/static (static files)
-//      * - _next/image (image optimization files)
-//      * - favicon.ico (favicon file)
-//      * Feel free to modify this pattern to include more paths.
-//      */
-//     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-//   ],
-// }
+export const config = { matcher: [
+  "/signin",
+  "/signup",
+  "/dahboard",
+  "/blog",
+  "/blog/:path*"] };

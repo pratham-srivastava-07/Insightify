@@ -28,12 +28,12 @@ export default function UserAuth() {
                         <DashboardIcon />
                     </Button>
                 </Link>
-                <Link href={"/api/auth/signout"}>
+                {/* <Link href={"/api/auth/signout"}> */}
                     <Button variant={"ghost"} onClick={()=> signOut({callbackUrl: "/"})} className="w-full flex items-center justify-between">
                         Logout
                         <LockOpen1Icon />
                     </Button>
-                </Link>
+                {/* </Link> */}
             </PopoverContent>
         </Popover>
     </div>

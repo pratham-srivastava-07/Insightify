@@ -9,7 +9,7 @@ export default function Blogs() {
     <div className='space-y-5'>
       <div className='flex justify-between'>
        <h1 className='text-2xl font-bold'>Blogs</h1>
-      <Link href='/dashboard/blog/create'>
+      <Link href='/blog/create'>
         <Button variant="outline" className='flex items-center gap-2'>
           Create <PlusIcon/>
         </Button>
