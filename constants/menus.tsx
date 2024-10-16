@@ -1,12 +1,12 @@
 import { Contact, Home, HomeIcon } from "lucide-react"
-import { SiAboutdotme, SiWritedotas } from "react-icons/si"
+import { SiAboutdotme, SiChatbot, SiCoursera, SiDevexpress, SiMsibusiness, SiWritedotas } from "react-icons/si"
 
 export type MenuProps = {
     id: number,
     label: string,
     icon: JSX.Element
     path: string,
-    section: boolean
+    section?: boolean
 }
 
 export const LANDING_PAGE_MENU: MenuProps[] = [
@@ -39,3 +39,54 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
         section: true
     }
 ]   
+
+
+export type GroupMenuProps = {
+    id: number
+    label: string
+    icon: JSX.Element
+    path: string
+  }
+
+
+  export const GROUP_PAGE_MENU: MenuProps[] = [
+    {
+      id: 0,
+      label: "Group",
+      icon: <Home />,
+      path: "/",
+      section: true,
+    },
+    {
+      id: 1,
+      label: "Courses",
+      icon: <SiCoursera />,
+      path: "#pricing",
+      section: true,
+    },
+    {
+        id: 2,
+        label: "Events",
+        icon: <SiMsibusiness />,
+        path: "/explore",
+        section: false
+    },
+    {
+      id: 3,
+      label: "Members",
+      icon: <SiDevexpress />,
+      path: "/explore",
+    },
+    {
+      id: 4,
+      label: "About",
+      icon: <SiAboutdotme />,
+      path: "/explore",
+    },
+    {
+      id: 5,
+      label: "Huddle",
+      icon: <SiChatbot />,
+      path: "/explore",
+    },
+]
