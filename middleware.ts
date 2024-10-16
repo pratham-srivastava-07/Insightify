@@ -1,14 +1,7 @@
 import { withAuth } from "next-auth/middleware";
-import { NextResponse } from "next/server";
 
 export default withAuth(
-    function middleware(req) {
-      const token = req.nextauth?.token
-      const path = req.nextUrl.pathname
-      if(token && (path.startsWith("/signin") || path.startsWith("/signup"))) {
-          return NextResponse.redirect(new URL("/", req.url))
-      }
-    },
+    function middleware(req) {},
     {
         callbacks: {
             authorized: ({ token }) => !!token,
@@ -16,9 +9,5 @@ export default withAuth(
     },
 );
 
-export const config = { matcher: [
-  "/signin",
-  "/signup",
-  "/dahboard",
-  "/blog",
-  "/blog/:path*"] };
+
+export const config = { matcher: ["/dashboard", "/blog", "/blog/:path*"] };

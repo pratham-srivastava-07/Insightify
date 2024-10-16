@@ -2,18 +2,21 @@
 import SignInForm from "@/components/forms/signin"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { signIn } from "next-auth/react"
+import { signIn, useSession } from "next-auth/react"
 import Link from "next/link"
 import { BsGoogle } from "react-icons/bs"
 import { SiGithub, SiGoogleauthenticator } from "react-icons/si"
 
 const SignInPage = () => {
+  // const {data: session } = useSession()
+
+  
 
   const handleAuthWithGoogle = async () => {
-        await signIn("google", {callbackUrl: '/dashboard'});
+        await signIn("google", {callbackUrl: '/dashboard', redirect: false});
   }
   const handleAuthWithGithub = async () => {
-      await signIn("github", {callbackUrl: "/dashboard"})
+      await signIn("github", {callbackUrl: "/dashboard", redirect: false})
   }
   return (
     <>
