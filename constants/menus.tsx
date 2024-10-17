@@ -1,5 +1,6 @@
-import { Contact, Home, HomeIcon } from "lucide-react"
-import { SiAboutdotme, SiChatbot, SiCoursera, SiDevexpress, SiMsibusiness, SiWritedotas } from "react-icons/si"
+import { Contact, Home, HomeIcon, WorkflowIcon } from "lucide-react"
+import { PiCommandDuotone } from "react-icons/pi"
+import { SiAboutdotme, SiChatbot, SiCoursera, SiDevexpress, SiMsibusiness, SiStudyverse, SiWritedotas } from "react-icons/si"
 
 export type MenuProps = {
     id: number,
@@ -7,6 +8,7 @@ export type MenuProps = {
     icon: JSX.Element
     path: string,
     section?: boolean
+    description?: string
 }
 
 export const LANDING_PAGE_MENU: MenuProps[] = [
@@ -89,4 +91,31 @@ export type GroupMenuProps = {
       icon: <SiChatbot />,
       path: "/explore",
     },
+]
+
+
+
+export const GROUP_TEMPLATES: MenuProps[] = [
+  {
+    id: 1,
+    label: "Community Group",
+    description: "Ideal for clubs, social groups, and community events.",
+    icon: <PiCommandDuotone />,
+    path: ""
+  },
+  {
+    id: 2,
+    label: "Study Group",
+    description: "Perfect for students collaborating on projects and assignments.",
+    icon: <SiStudyverse />,
+    path: ""
+  },
+  {
+    id: 3,
+    label: "Work Project",
+    description: "Best for organizing work-related projects and team collaborations.",
+    icon: <WorkflowIcon />,
+    path: ""
+  },
+  // Add more templates as needed
 ]

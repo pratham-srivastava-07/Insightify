@@ -15,3 +15,11 @@ model User {
   email         String?    @unique
   password      String
 }
+
+model Affiliate {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  Group     String   
+  groupId   String?  @unique @db.Uuid
+  createdAt DateTime @default(now())
+}
+
