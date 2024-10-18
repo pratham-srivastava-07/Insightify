@@ -20,7 +20,7 @@ const supabase = createServerClient(
 )
 
 
-export async function BlogForm(data: FormSchema) {
+export async function FormBlog(data: FormSchema) {
     // To be continued
     const {["content"]:excludedKey, ...blog} =  data
 

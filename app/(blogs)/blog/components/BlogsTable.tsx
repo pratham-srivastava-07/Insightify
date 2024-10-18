@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button"
 import { EyeOpenIcon } from "@radix-ui/react-icons"
 import { Switch } from "@/components/ui/switch"
 import { Pencil, PencilIcon, Trash} from "lucide-react"
-import { readBlogs } from "@/lib/actions/blog"
+import { readBlogs } from "@/lib/actions/form"
 
-export default async function BlogTable() {
+export default async function BlogsTable() {
    const {data: blogs} =  await readBlogs()
 
     return(
