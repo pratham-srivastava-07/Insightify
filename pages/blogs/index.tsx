@@ -1,7 +1,7 @@
 import React from 'react'
 import {  PlusIcon } from 'lucide-react'
 import Link from "next/link"
-import BlogTable from '@/app/(blogs)/blog/components/BlogsTable'
+import BlogsTable from '@/app/(blogs)/blog/components/BlogsTable'
 import { Button } from '@/components/ui/button'
 
 export default function Blogs() {
@@ -15,7 +15,7 @@ export default function Blogs() {
         </Button>
       </Link>
       </div>
-      <BlogTable/>
+      <BlogsTable/>
     </div>
   )
 }
