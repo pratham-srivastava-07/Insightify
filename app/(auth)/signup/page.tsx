@@ -1,11 +1,11 @@
-"use client"
+
 import SignUpPage from "@/pages/signup/Signup";
-import { useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 
-export default function() {
-    const {data: session} = useSession()
+export default async function SignupPage() {
+   const session = await getServerSession()
 
     if(session) {redirect("/dashboard")}
     return (
