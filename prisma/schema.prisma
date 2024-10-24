@@ -23,3 +23,9 @@ model Affiliate {
   createdAt DateTime @default(now())
 }
 
+model Group {
+  id        Int     @id @default(autoincrement())
+  name      String  @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
