@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState, useCallback } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { onSearchGroups } from "@/actions/groups"
@@ -25,10 +26,11 @@ export const useSearch = (searchType: "GROUPS" | "POSTS") => {
       if (searchType === "GROUPS") {
         const groups = await onSearchGroups(searchType, queryKey[1])
         return groups
-      } else {
-        const posts = await onSearchPosts(searchType, queryKey[1])
-        return posts
       }
+      // } else {
+      //   const posts = await onSearchPosts(searchType, queryKey[1])
+      //   return posts
+      // }
     },
     enabled: false,
   })
@@ -40,7 +42,7 @@ export const useSearch = (searchType: "GROUPS" | "POSTS") => {
 
     if (isFetched) {
       setIsSearching(false)
-      setSearchResults(data?.groups || data?.posts || [])
+      setSearchResults(data?.groups || [])
     }
   }, [isFetching, isFetched, data])
 
