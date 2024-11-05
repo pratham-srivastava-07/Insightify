@@ -2,11 +2,11 @@
 import CreateBlog, { FormSchema } from "@/components/content/CreateBlog";
 // import CreateBlog, { FormSchema } from "@/components/CreateBlog";
 import { toast } from "@/components/ui/use-toast";
-import { BlogForm } from "@/lib/actions/form";
+import { FormBlog } from "@/lib/actions/form";
 
 export default function page() {
   const handleChange = async (data: FormSchema) => {
-    const result= await BlogForm(data);
+    const result= await FormBlog(data);
     const {error} = JSON.parse(result)
 
     if(error?.message) {
