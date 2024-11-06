@@ -6,7 +6,16 @@ import { FormBlog } from "@/lib/actions/form";
 
 export default function page() {
   const handleChange = async (data: FormSchema) => {
-    const result= await FormBlog(data);
+    const result = await FormBlog(data);
+
+    if(!result) {
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred while submitting the blog.",
+      });
+      return;
+    }
+    
     const {error} = JSON.parse(result)
 
     if(error?.message) {

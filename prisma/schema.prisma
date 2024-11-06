@@ -29,3 +29,19 @@ model Group {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+model Blog {
+  id           String      @id @default(uuid())
+  created_at   DateTime    @default(now())
+  title        String
+  image_url    String
+  is_premium   Boolean
+  is_published Boolean
+  BlogContent BlogContent[]
+}
+
+model BlogContent {
+  id      Int     @id @default(autoincrement())
+  blogId  String  @unique // Foreign key to Blog with a unique constraint for one-to-one
+  content String
+  blog    Blog    @relation(fields: [blogId], references: [id])
+}

@@ -4,6 +4,7 @@ import { FormSchema } from "@/components/content/CreateBlog"
 // import { FormSchema } from "@/components/CreateBlog"
 import { createServerClient } from "@supabase/ssr"
 import {cookies} from 'next/headers'
+import { prismaClient } from "../db"
 
 const cookieStore = cookies()
 
@@ -24,17 +25,28 @@ export async function FormBlog(data: FormSchema) {
     // To be continued
     const {["content"]:excludedKey, ...blog} =  data
 
-   const response = await supabase.from("blog").insert(blog).select("id").single()
-
-    if(response.error) {
-        return JSON.stringify(response)
-    }
-    else {
-        const result = await supabase.from("blog").insert({
-            blog_id: response.data.id!,
-            content: data.content!
+    try {
+        const response = await prismaClient.blog.create({
+            data: {
+                title: blog.title,
+                created_at: new Date(),
+                image_url: blog.image_url,
+                is_premium: blog.is_premium,
+                is_published: blog.is_published
+            },
+            select: {
+                id: true
+            }
         })
-        return JSON.stringify(result)
+        const result = await prismaClient.blogContent.create({
+            data: {
+                blogId: response.id,
+                content: data.content
+            }
+        })
+        return JSON.stringify({result})
+    } catch(e) {
+        console.log(JSON.stringify({error: e}))
     }
 }
 
