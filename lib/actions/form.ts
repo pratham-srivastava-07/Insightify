@@ -50,6 +50,16 @@ export async function FormBlog(data: FormSchema) {
     }
 }
 
+// export async function readBlogs() {
+//     return supabase.from("blog").select("*").order("created_at", {ascending: true})
+// }
+
 export async function readBlogs() {
-    return supabase.from("blog").select("*").order("created_at", {ascending: true})
+    try{ 
+        const blogs = await prismaClient.blog.findMany({})
+        return blogs;
+    } catch(e) {
+        console.error(e)
+    }
+    return;
 }

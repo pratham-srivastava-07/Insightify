@@ -5,7 +5,7 @@ import { Pencil, PencilIcon, Trash} from "lucide-react"
 import { readBlogs } from "@/lib/actions/form"
 
 export default async function BlogsTable() {
-   const {data: blogs} =  await readBlogs()
+   const blogs =  await readBlogs()
 
     return(
         <div className="overflow-x-auto">
