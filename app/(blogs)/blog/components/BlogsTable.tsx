@@ -3,6 +3,7 @@ import { EyeOpenIcon } from "@radix-ui/react-icons"
 import { Switch } from "@/components/ui/switch"
 import { Pencil, PencilIcon, Trash} from "lucide-react"
 import { readBlogs } from "@/lib/actions/form"
+import Link from "next/link"
 
 export default async function BlogsTable() {
    const blogs =  await readBlogs()
@@ -17,7 +18,7 @@ export default async function BlogsTable() {
             </div>
             {blogs?.map((blog, ind)=> {
                 return (<div key={ind} className="bg-graident-dark grid grid-cols-5 p-5">
-                <h1 className="col-span-2">{blog.title}</h1>
+                <Link href={`/blog/${blog.id}`}><h1 className="col-span-2">{blog.title}</h1></Link>
                 <Switch checked={blog.is_premium}/>
                 <Switch checked = {blog.is_published}/>
                 <Actions/>
