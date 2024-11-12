@@ -1,7 +1,7 @@
 import BlogId from "@/pages/blogId";
 
-export default function BlogIdPage() {
+export default function BlogIdPage({ params }: { params: { blogId: string } }) {
     return <div>
-        <BlogId />
+        <BlogId blogId={params.blogId} />
     </div>
 }

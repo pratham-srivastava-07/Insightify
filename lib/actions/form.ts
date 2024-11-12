@@ -59,3 +59,23 @@ export async function readBlogs() {
     }
     return;
 }
+
+export async function deleteBlog(id: string) {
+    try {
+        await prismaClient.blogContent.deleteMany({
+            where: {
+                blogId: id
+            }
+        })
+
+        const blogDeletion = await prismaClient.blog.delete({
+            where: {
+                id: id
+            }
+        })
+
+        return blogDeletion;
+    } catch(e) {
+        console.log(e)
+    }
+}

@@ -1,18 +1,26 @@
+"use client"
 import axios from "axios"
+import { useEffect, useState } from "react"
 
-async function getBlogDetails() {
-    const response = await axios.get('http://localhost:3000/api/blog/:blogId')
+async function getBlogDetails(blogId: string) {
+    const response = await axios.get(`http://localhost:3000/api/blogs/${blogId}`)
     return response.data
 }
 
-export default async function BlogId() {
-    const data = await getBlogDetails()
-    if(!data) {
-        return ""
+export default function BlogId({blogId}: {blogId: string}) {
+    const [data, setData] = useState<any>(null)
+
+    async function getData() {
+        const res = await getBlogDetails(blogId)
+        setData(res)
     }
+
+    useEffect(() => {
+        getData()
+    }, [])
+   
     return <div>
-        {data?.title}
-        {data?.imageUrl}
+      {data}
         Single Blog Page
     </div>
 }

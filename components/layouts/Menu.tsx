@@ -16,6 +16,7 @@ export default function Menu({orientation}: MenuProps) {
             return <Card className="bg-themeGray border-themeGray bg-clip-padding backdrop--blur_safari backdrop-filter backdrop-blur-2xl  bg-opacity-60 p-1 lg:flex hidden rounded-xl">
                 <CardContent className="p-0 flex gap-2">
                 {GROUP_CONSTANTS.landingPageMenu.map((menuItem) => (
+                  <div key={menuItem.id}>
               <Link
                 href={menuItem.path}
                 {...(menuItem.section && {
@@ -27,11 +28,12 @@ export default function Menu({orientation}: MenuProps) {
                     ? "bg-[#09090B] border-[#27272A]"
                     : "",
                 )}
-                key={menuItem.id}
+                
               >
                 {section == menuItem.path && menuItem.icon}
                 {menuItem.label}
               </Link>
+              </div>
             ))}
                 </CardContent>
             </Card>
@@ -40,6 +42,7 @@ export default function Menu({orientation}: MenuProps) {
             return (
                 <div className="flex flex-col mt-10">
                   {GROUP_CONSTANTS.landingPageMenu.map((menuItem) => (
+                    <div key={menuItem.id}>
                     <Link
                       href={menuItem.path}
                       {...(menuItem.section && {
@@ -48,12 +51,12 @@ export default function Menu({orientation}: MenuProps) {
                       className={cn(
                         "rounded-xl flex gap-2 py-2 px-4 items-center",
                         section == menuItem.path ? "bg-themeGray border-[#27272A]" : "",
-                      )}
-                      key={menuItem.id}
+                      )} 
                     >
                       {menuItem.icon}
                       {menuItem.label}
                     </Link>
+                    </div>
                   ))}
                 </div>
               )
