@@ -25,3 +25,38 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }
+
+
+export async function PUT(req: NextRequest) {
+    const body = await req.json()
+    const id = req.nextUrl.pathname.split("/").pop()
+
+    if(!id) return NextResponse.json({message: "Not found"}, {status: 404})
+
+    try {
+      const res = await prismaClient.blog.update({
+        where: {
+          id: id as string
+        },
+        data: {
+          title: body.title,
+          image_url: body.image_url,
+          is_premium: body.is_premium,
+          is_published: body.is_published,
+          BlogContent: {
+            update: {
+              where: {
+                blogId: id
+              },
+              data: {
+                content: body.content
+              }
+            }
+          }
+        }
+      })
+      return NextResponse.json({message: "Updated blog"}, {status: 200})
+    } catch(err) {
+      console.error(err)
+    }
+}
