@@ -40,7 +40,7 @@ export default function BlogId({ blogId }: { blogId: string }) {
 
   return (
     <div>
-      <h1>{data.title}</h1>
+      <h1>{JSON.stringify(data)}</h1>
       {/* <p>{data.content}</p> */}
       <div>Single Blog Page</div>
     </div>

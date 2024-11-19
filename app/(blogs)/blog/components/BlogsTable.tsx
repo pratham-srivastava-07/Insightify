@@ -2,6 +2,7 @@ import { Switch } from "@/components/ui/switch";
 import {  readBlogs } from "@/lib/actions/form";
 import Link from "next/link";
 import { Actions } from "@/components/content/Actions";
+import BlogSwitch from "./switch";
 
 export default async function BlogsTable() {
    const blogs = await readBlogs();
@@ -21,11 +22,13 @@ export default async function BlogsTable() {
                                 <h1>{blog.title}</h1>
                             </Link>
                             <div className="flex justify-center">
-                                <Switch checked={blog.is_premium} />
+                                <Switch checked={blog.is_premium}  />
                             </div>
+                            {/* <BlogSwitch checked={blog.is_premium} onClick={() => !blog.is_premium} /> */}
                             <div className="flex justify-center">
                                 <Switch checked={blog.is_published} />
                             </div>
+                             {/* <BlogSwitch checked={blog.is_published} onClick={() => !blog.is_published} /> */}
                             <div className="col-span-4 flex justify-center gap-4 mt-2">
                                 <Actions blogId={blog.id}/>
                             </div>
