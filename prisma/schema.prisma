@@ -1,0 +1,47 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Update this in your .env file
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?    @unique
+  password      String
+}
+
+model Affiliate {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  Group     String   
+  groupId   String?  @unique @db.Uuid
+  createdAt DateTime @default(now())
+}
+
+model Group {
+  id        Int     @id @default(autoincrement())
+  name      String  @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Blog {
+  id           String      @id @default(uuid())
+  created_at   DateTime    @default(now())
+  title        String
+  image_url    String
+  is_premium   Boolean
+  is_published Boolean
+  BlogContent BlogContent[]
+}
+
+model BlogContent {
+  id      Int     @id @default(autoincrement())
+  blogId  String  @unique // Foreign key to Blog with a unique constraint for one-to-one
+  content String
+  blog    Blog    @relation(fields: [blogId], references: [id])
+}
