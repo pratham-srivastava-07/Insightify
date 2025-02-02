@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body
+    suppressHydrationWarning
   className={`${inter.variable} antialiased bg-[linear-gradient(145deg,_#000000,_#1b1b1b,_#3d3d3d,_#101010)] bg-[length:200%_200%] animate-[neonGlow_5s_ease-in-out_infinite]`}
   style={{ color: 'white' }}
 >

@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className='flex items-center justify-between'>
         <div className="group">
-            <Link href="/" className='text-2xl font-bold md:text-left sm:text-left'>Insightify</Link>
+            <Link href="/" className='text-2xl cursor-pointer font-bold md:text-left sm:text-left'>Insightify</Link>
             <div className='h-1 w-0 group-hover:w-full transition-all bg-blue-500'></div>
         </div>
         <div className="menu">
