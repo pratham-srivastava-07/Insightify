@@ -19,15 +19,13 @@ export default function() {
    <>
        {!session ? <div className='flex items-cemter space-x-4'>
 
-        {pathName !== '/signin' && pathName !== '/signup' &&
-              <Link href='/api/auth/signin'>
+        <Link href='/api/auth/signin'>
               <Button variant={"outline"}
                 className='flex items-center gap-2'
                 >
                 Sign In
               </Button>
             </Link>
-        }
     </div>: <UserAuth />}
    </>
   )
