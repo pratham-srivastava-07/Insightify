@@ -1,0 +1,52 @@
+{
+    "title": {
+      "icon": "",
+      "text": ""
+    },
+    "sections": [
+      {
+        "title": "FUNDAMENTALS",
+        "type": "section",
+        "items": [
+          "Connecting to your database",
+          "Importing data",
+          "Securing your data"
+        ]
+      },
+      {
+        "title": "WORKING WITH YOUR DATABASE (BASICS)",
+        "type": "section",
+        "items": [
+          "Managing tables, views, and data",
+          "Working with arrays",
+          "Managing indexes",
+          "Querying joins and nested tables",
+          "JSON and unstructured data"
+        ]
+      },
+      {
+        "title": "WORKING WITH YOUR DATABASE (INTERMEDIATE)",
+        "type": "section",
+        "items": [
+          "Implementing cascade deletes",
+          "Managing enums",
+          "Managing database functions",
+          "Managing database triggers",
+          "Managing database webhooks",
+          "Using Full Text Search",
+          "Partitioning your tables",
+          "Managing connections"
+        ]
+      },
+      {
+        "title": "ORIOLEDB",
+        "type": "section",
+        "items": ["Overview"]
+      },
+      {
+        "title": "ACCESS AND SECURITY",
+        "type": "section",
+        "items": []
+      }
+    ]
+  }
