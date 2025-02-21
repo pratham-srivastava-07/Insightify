@@ -1,4 +1,5 @@
 import { Contact, Home, HomeIcon, WorkflowIcon } from "lucide-react"
+import { JSX } from "react"
 import { PiCommandDuotone } from "react-icons/pi"
 import { SiAboutdotme, SiChatbot, SiCoursera, SiDevexpress, SiMsibusiness, SiStudyverse, SiWritedotas } from "react-icons/si"
 

@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
-import { LayoutDashboard, UserCog, Settings, LogOut } from "lucide-react";
-import Link from "next/link";
-
+import {links} from "@/constants/links"
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/content/logo";
@@ -11,36 +9,7 @@ import { LogoIcon } from "@/components/content/logo-icon";
 import { SidebarDemo } from "@/components/global/sidebar/SidebarDemo";
 
  export function Dashboard() {
-  const links = [
-    {
-      label: "Main",
-      href: "#",
-      icon: (
-        <LayoutDashboard className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-    {
-      label: "Profile",
-      href: "#",
-      icon: (
-        <UserCog className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-    {
-      label: "Settings",
-      href: "#",
-      icon: (
-        <Settings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-    {
-      label: "Logout",
-      href: "#",
-      icon: (
-        <LogOut className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-  ];
+ 
   const [open, setOpen] = useState(false);
   return (
     <div
@@ -82,11 +51,3 @@ import { SidebarDemo } from "@/components/global/sidebar/SidebarDemo";
     </div>
   );
 }
-
-
-
-
-
-// Dummy dashboard component with content
-
-
