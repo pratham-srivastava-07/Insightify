@@ -2,7 +2,7 @@ import { Switch } from "@/components/ui/switch";
 import {  readBlogs } from "@/lib/actions/form";
 import Link from "next/link";
 import { Actions } from "@/components/content/Actions";
-import BlogSwitch from "./switch";
+
 
 export default async function BlogsTable() {
    const blogs = await readBlogs();

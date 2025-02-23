@@ -1,5 +1,6 @@
 import { ChatBubbleIcon } from "@radix-ui/react-icons"
 import { Grid, Heart, Megaphone } from "lucide-react"
+import { JSX } from "react"
 
 export type PlaceholderProps = {
   id: string

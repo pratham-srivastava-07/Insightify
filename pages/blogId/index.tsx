@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 async function getBlogDetails(blogId: string) {
   try {
@@ -17,15 +17,22 @@ export default function BlogId({ blogId }: { blogId: string }) {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  async function getData() {
+  // async function getData() {
+  //   try {
+  //     const res = await getBlogDetails(blogId);
+  //     setData(res);
+  //   } catch (err) {
+  //     setError(`Failed to load blog data ${err}`);
+  //   }
+  // }
+  const getData = useCallback(async () => {
     try {
-      const res = await getBlogDetails(blogId);
-      setData(res);
-    } catch (err) {
-      setError("Failed to load blog data.");
-    }
-  }
-
+          const res = await getBlogDetails(blogId);
+          setData(res);
+        } catch (err) {
+          setError(`Failed to load blog data ${err}`);
+        }
+  }, [])
   useEffect(() => {
     if (blogId) getData();
   }, [blogId]);

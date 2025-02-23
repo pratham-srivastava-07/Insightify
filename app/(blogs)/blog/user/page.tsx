@@ -1,6 +1,6 @@
-import User from "@/pages/User";
+import User from "@/pages/user";
 
-export default function() {
+export default function UserBlogPage() {
     return (
         <div>
           <User/>

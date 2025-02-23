@@ -1,7 +1,7 @@
 import Blogs from "@/pages/blogs";
 
 
-export default function() {
+export default function ParentBlogPage() {
     return <div>
         <Blogs />
     </div>

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { JSX } from "react"
 
 type Props = {
     icon: JSX.Element

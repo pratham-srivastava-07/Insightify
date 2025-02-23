@@ -6,8 +6,8 @@ async function getBlog(blogId: string) {
     return response.data;
 }
 
-export default async function EditBlogPage({ params }: { params: { blogId: string } }) {
-    const {blogId} = params
+export default async function EditBlogPage({ params }: { params: Promise<{ blogId: string }> }) {
+    const {blogId} = await params
     try{
         const initData = await getBlog(blogId);
         return <div>

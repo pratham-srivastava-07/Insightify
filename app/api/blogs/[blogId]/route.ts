@@ -55,7 +55,7 @@ export async function PUT(req: NextRequest) {
           }
         }
       })
-      return NextResponse.json({message: "Updated blog"}, {status: 200})
+      return NextResponse.json({message: "Updated blog", result: res}, {status: 200})
     } catch(err) {
       console.error(err)
     }

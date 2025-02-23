@@ -1,6 +1,6 @@
 import {Dashboard} from "@/pages/dashboard/Dashboard";
 
-export default  function() {
+export default function DashboardPage() {
     return (
         <div className="mt-5">
             {/* <Navbar /> */}
