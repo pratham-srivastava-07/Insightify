@@ -13,6 +13,9 @@ export async function GET(req: NextRequest) {
       where: {
         id: id as string,
       },
+      include: {
+        BlogContent: true
+      }
     });
 
     if (!singleBlog) {

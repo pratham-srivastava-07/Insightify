@@ -29,7 +29,7 @@ export default function page() {
       })
     } else {
       toast({
-        title: "Successfully submitted" + data.title
+        title: "Successfully submitted" + " " + data.title
       })
     }
    
