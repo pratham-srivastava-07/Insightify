@@ -5,7 +5,8 @@ export default function DashboardPage() {
         <div className="mt-5">
             {/* <Navbar /> */}
             {/* <Search searchType={"GROUPS"} /> */}
-            <Dashboard />
+            {/* <Dashboard /> */}
+            Dashboard
         </div>
     )
 }
