@@ -1,4 +1,4 @@
-import Contact from "@/pages/contact/Contact";
+import Contact from "@/pages-render/contact/Contact";
 
 export default function ContactPage() {
     return (

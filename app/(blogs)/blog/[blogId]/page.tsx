@@ -1,4 +1,4 @@
-import BlogId from "@/pages/blogId";
+import BlogId from "@/pages-render/blogId";
 
 export default async function BlogIdPage({ params }: { params: Promise<{ blogId: string }> }) {
     const {blogId} = await params;

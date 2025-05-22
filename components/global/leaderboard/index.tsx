@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
 
 const leaderboard = [
   { id: 1, name: "Sarah K.", points: 1250, avatar: "/placeholder.svg?height=32&width=32" },
@@ -21,7 +22,7 @@ export function Leaderboard() {
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
               {i + 1}
             </div>
-            <img src={user.avatar || "/placeholder.svg"} alt="" className="h-10 w-10 rounded-full" />
+            <Image fill src={user.avatar || "/placeholder.svg"} alt="" className="h-10 w-10 rounded-full" />
             <div>
               <div className="font-medium">{user.name}</div>
               <div className="text-sm text-gray-400">{user.points.toLocaleString()} points</div>

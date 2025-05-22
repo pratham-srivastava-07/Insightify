@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth"
 import Link from "next/link"
 
 type Props = {}
+export const dynamic = 'force-dynamic'
 
 const CallToAction = async (props: Props) => {
   const session = await getServerSession()

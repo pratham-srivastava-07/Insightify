@@ -1,4 +1,4 @@
-import Blogs from "@/pages/blogs";
+import Blogs from "@/pages-render/blogs";
 
 
 export default function ParentBlogPage() {

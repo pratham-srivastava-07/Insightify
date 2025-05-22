@@ -1,4 +1,4 @@
-import Docs from "@/pages/docsPage";
+import Docs from "@/pages-render/docsPage";
 
 export default function DocsPage() {
     return <div>

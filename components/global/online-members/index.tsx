@@ -1,4 +1,5 @@
 import { ScrollArea } from "@/components/ui/scroll-area"
+import Image from "next/image"
 
 export function OnlineMembers() {
   return (
@@ -11,7 +12,7 @@ export function OnlineMembers() {
           {Array.from({ length: 10 }).map((_, i) => (
             <div key={i} className="flex items-center gap-3 py-3">
               <div className="relative">
-                <img src="/placeholder.svg?height=32&width=32" alt="" className="h-8 w-8 rounded-full" />
+                <Image fill src="/placeholder.svg?height=32&width=32" alt="" className="h-8 w-8 rounded-full" />
                 <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-gray-900 bg-green-500" />
               </div>
               <div>

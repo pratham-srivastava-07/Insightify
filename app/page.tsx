@@ -1,6 +1,4 @@
-
-// import { SidebarDemo } from "@/pages/dashboard/Dashboard";
-import Main from "@/pages/main";
+import Main from "@/pages-render/main/Main";
 export default function Home() {
   return (
     <main className="">

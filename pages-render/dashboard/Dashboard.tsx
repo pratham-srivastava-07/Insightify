@@ -8,7 +8,7 @@ import { Logo } from "@/components/content/logo";
 import { LogoIcon } from "@/components/content/logo-icon";
 import { SidebarDemo } from "@/components/global/sidebar/SidebarDemo";
 
- export function Dashboard() {
+ export default function Dashboard() {
  
   const [open, setOpen] = useState(false);
   return (

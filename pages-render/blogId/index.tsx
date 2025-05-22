@@ -4,6 +4,7 @@ import axios from "axios";
 import { Calendar, Clock } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 async function getBlogDetails(blogId: string) {
   try {
@@ -79,7 +80,8 @@ export default function BlogId({ blogId }: { blogId: string }) {
       <div className="container max-w-3xl py-10">
         {/* Hero Image */}
         <div className="aspect-video w-full overflow-hidden rounded-lg bg-muted">
-          <img
+          <Image
+            fill
             src={data.image_url}
             alt={data.title}
             className="w-full h-full object-cover"

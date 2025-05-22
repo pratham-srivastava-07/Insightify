@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRight, BookOpen, Users, Zap } from 'lucide-react';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -73,7 +74,8 @@ export default function About() {
               </button>
             </div>
             <div className="relative aspect-square rounded-lg overflow-hidden">
-              <img
+              <Image
+                fill
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
                 alt="Team collaboration"
                 className="object-cover w-full h-full"

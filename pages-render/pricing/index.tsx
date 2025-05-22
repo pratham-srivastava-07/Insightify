@@ -8,7 +8,7 @@ import Link from "next/link"
 
 type Props = {}
 
-export const Pricing = (props: Props) => {
+const Pricing = (props: Props) => {
   return (
     <div className="w-full pt-20 flex flex-col items-center gap-3" id="pricing">
       <BackdropGradient className="w-8/12 h-full opacity-40 flex flex-col items-center"  container={""}>
@@ -66,3 +66,5 @@ export const Pricing = (props: Props) => {
     </div>
   )
 }
+
+export default Pricing;

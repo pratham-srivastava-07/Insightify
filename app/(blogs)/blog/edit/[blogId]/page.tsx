@@ -1,4 +1,4 @@
-import EditBlog from "@/pages/editBlog";
+import EditBlog from "@/pages-render/editBlog";
 import axios from "axios";
 
 async function getBlog(blogId: string) {

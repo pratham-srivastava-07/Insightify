@@ -16,6 +16,7 @@ import { EyeOpenIcon, Pencil1Icon } from "@radix-ui/react-icons";
 import { RocketIcon, StarIcon } from "lucide-react";
 import MarkDownPreview from "@/components/content/MarkDown";
 import axios from "axios";
+import Image from "next/image";
 
 // Zod validation schema for the form
 const EditBlogSchema = z.object({
@@ -140,7 +141,7 @@ export default function EditBlog({ initialData }: { initialData: EditBlogSchemaT
               </FormControl>
               {isPreview && field.value && (
                 <div className="relative h-80 mt-5 border rounded-md">
-                  <img src={field.value} alt="Blog Image" className="object-cover object-center rounded-md" />
+                  <Image fill src={field.value} alt="Blog Image" className="object-cover object-center rounded-md" />
                 </div>
               )}
               <FormMessage />

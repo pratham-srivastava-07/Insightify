@@ -8,7 +8,7 @@ import UserAuth from './UserAuth'
 import  Link  from 'next/link'
 
 
-export default function() {
+export default function LoginFormFunction() {
 
   const {data: session} = useSession()
 
