@@ -8,9 +8,9 @@ import { Logo } from "@/components/content/logo";
 import { LogoIcon } from "@/components/content/logo-icon";
 import { SidebarDemo } from "@/components/global/sidebar/SidebarDemo";
 
- export default function Dashboard() {
- 
+export default function Dashboard() {
   const [open, setOpen] = useState(false);
+  
   return (
     <div
       className={cn(
@@ -22,14 +22,15 @@ import { SidebarDemo } from "@/components/global/sidebar/SidebarDemo";
       <Sidebar open={open} setOpen={setOpen}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-            {open ? <Logo /> : <LogoIcon />}
+            {/* {open ? <Logo /> : <LogoIcon />} */}
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
             </div>
           </div>
-          <div>
+          {/* User section positioned at bottom */}
+          <div className="mt-auto">
             <SidebarLink
               link={{
                 label: "User",
