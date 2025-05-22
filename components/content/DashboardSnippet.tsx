@@ -12,7 +12,7 @@ const DashboardSnippet = (props: Props) => {
           src="/dashboard-snippet.png"
           className="opacity-[0.95]"
           alt="snippet"
-
+          fill
           style={{ objectFit: 'cover' }}
         />
       </div>
